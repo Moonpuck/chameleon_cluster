@@ -84,4 +84,14 @@ def cluster(df, k, knn=10, m=30, alpha=2.0, verbose=False, plot=False):
         merge_best(graph, df, alpha, k, verbose)
         if plot:
             plot2d_data(df)
-    return df[['cluster']]
+    res = rebuild_labels(df)
+    return res
+
+def rebuild_labels(df):
+    ans = df.copy()
+    clusters = list(pd.DataFrame(df['cluster'].value_counts()).index)
+    c = 1
+    for i in clusters:
+        ans.loc[df['cluster'] == i, 'cluster'] = c
+        c = c + 1
+    return ans
