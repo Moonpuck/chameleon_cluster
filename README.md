@@ -2,8 +2,8 @@
 
 Python 3.5+ implementation of the clustering algorithm CHAMELEON[1].
 
-This repository is a secondary development
-from https://github.com/giovannipcarvalho/PyCHAMELEON.git
+This repository is a modification and improvement
+of https://github.com/giovannipcarvalho/PyCHAMELEON.git
 
 Fixed lots of bugs and accorded with the results in the paper.
 
