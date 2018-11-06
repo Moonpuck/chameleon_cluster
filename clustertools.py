@@ -26,11 +26,3 @@ def contingency(v1, v2):
     for i in range(0, np.size(v1)):
         res[v1[i] - 1, v2[i] - 1] = res[v1[i] - 1, v2[i] - 1] + 1
     return res
-
-a = np.array([1, 1, 2, 3, 3])
-b = np.array([1, 1, 1, 2, 3])
-
-res = contingency(a, b)
-res = np.array(map(lambda x: 2 * x, res))
-Tp = external_index(a, b)
-print(res)
