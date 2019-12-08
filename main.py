@@ -3,7 +3,12 @@ import pandas as pd
 from visualization import *
 from chameleon import *
 
+#making events
+start_clock = cuda.Event()
+end_clock = cuda.Event()
 if __name__ == "__main__":
+    start_clock.record()
+    
     # get a set of data points
     df = pd.read_csv('./datasets/Aggregation.csv', sep=' ',
                      header=None)
@@ -13,3 +18,8 @@ if __name__ == "__main__":
 
     # draw a 2-D scatter plot with cluster
     plot2d_data(res)
+    
+    end_clock.record()
+    end_clock.synchronize()
+    time = start.time_till(end)*1e-3
+    print "%fs" % (secs)
