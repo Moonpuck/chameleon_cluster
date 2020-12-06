@@ -1,5 +1,6 @@
-import itertools
 from graphtools import *
+import itertools
+import pandas as pd
 
 
 def internal_interconnectivity(graph, cluster):
