@@ -3,5 +3,5 @@ pandas
 networkx
 seaborn
 matplotlib
-metis
+pymetis
 tqdm
